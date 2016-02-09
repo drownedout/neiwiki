@@ -1,4 +1,14 @@
 %h1.page-header= @article.title
+%div.row
+	%div.col-md-3
+		%p 
+		Created on
+		= @article.created_at.strftime('%b %d, %Y')
+	%div.col-md-3
+		%p
+		Updated on
+		= @article.updated_at.strftime('%b %d, %Y')
+%br
 
 %p= @article.content
 
