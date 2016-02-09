@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	before_action :find_article, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!, except: [:index, :show, :search	]
 
 	def index
 		if params[:category].blank?
@@ -28,6 +28,14 @@ class ArticlesController < ApplicationController
 		end
 
 	end
+
+	def search
+	    if params[:search].present?
+	      @articles = Article.search(params[:search])
+	    else
+	      @articles = Article.all
+	    end
+  	end
 
 	def show
 	end
