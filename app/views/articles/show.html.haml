@@ -22,3 +22,9 @@
 	- if user_signed_in?
 		= link_to "Edit", edit_article_path, class: "btn btn-default"
 		= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"
+%br
+%h4.page-header Additional Documents
+%br
+
+%p= link_to "View Document", @article.document.url, target: "_blank"
+= image_tag @article.image.url(:medium)

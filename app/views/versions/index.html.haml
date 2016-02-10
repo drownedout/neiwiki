@@ -1,3 +1,19 @@
+%h1.page-header Version History
+
 - @versions.each do |f|
-	%p= f.event
-	%p= f.item.title
+	%div.versions
+		%h4	 
+			Article Title:
+			= f.item.title
+		%p
+			%strong
+				Event:
+			= f.event
+		%p
+			%strong
+				Changes:
+			= f.object
+		%p 
+			%strong
+				User_ID:
+			= f.whodunnit

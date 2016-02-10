@@ -3,4 +3,6 @@
 		= f.input :title
 		= f.input :content
 		= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a Category"}
+		= f.input :image, as: :file
+		= f.input :document, as: :file
 		= f.submit

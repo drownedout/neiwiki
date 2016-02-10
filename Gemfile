@@ -15,6 +15,7 @@ gem 'devise', '~> 3.5', '>= 3.5.5'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'searchkick', '~> 1.1'
 gem 'paper_trail', '~> 4.1'
+gem 'paperclip', '~> 4.3', '>= 4.3.5'
 
 group :development, :test do
   gem 'byebug'
