@@ -21,3 +21,5 @@
 	%p.content-body
 		= truncate(article.content, length: 200)
 		= link_to "Read more >>", article
+
+= paginate @articles

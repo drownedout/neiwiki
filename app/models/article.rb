@@ -9,4 +9,6 @@ class Article < ActiveRecord::Base
 	belongs_to :category
 	searchkick
 	has_paper_trail
+
+	paginates_per 20
 end
