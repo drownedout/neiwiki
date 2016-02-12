@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
-
+group :development, :test do
+	gem 'sqlite3', 	'1.3.11'
+end
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
 gem 'rails', '4.2.5'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -20,15 +25,13 @@ gem 'kaminari', '~> 0.16.3'
 
 group :development, :test do
   gem 'byebug'
-  gem 'sqlite3'
+  gem 'spring'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'pg'
   gem 'rails_12factor'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
