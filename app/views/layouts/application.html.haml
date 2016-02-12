@@ -8,26 +8,31 @@
 %body
 	%p.notice= notice
 	%p.alert= alert
-	%nav.navbar.navbar-inverse.navbar-fixed-top
+	-if user_signed_in?
+		%nav.navbar.navbar-inverse.navbar-fixed-top
+			%div.container-fluid
+				%div.navbar-header
+					%a.navbar-brand NEI WIKIPEDIA
+				%div.collapse.navbar-collapse
+					-if user_signed_in?
+						%ul.nav.navbar-nav.navbar-right
+							%li= link_to "Logout", destroy_user_session_path, method: :delete
+					-else
+						%ul.nav.navbar-nav.navbar-right
+							%li= link_to "Login", new_user_session_path
+							%li= link_to "Sign Up", new_user_registration_path
 		%div.container-fluid
-			%div.navbar-header
-				%a.navbar-brand NEI WIKIPEDIA
-			%div.collapse.navbar-collapse
-				-if user_signed_in?
-					%ul.nav.navbar-nav.navbar-right
-						%li= link_to "Logout", destroy_user_session_path, method: :delete
-				-else
-					%ul.nav.navbar-nav.navbar-right
-						%li= link_to "Login", new_user_session_path
-						%li= link_to "Sign Up", new_user_registration_path
-	%div.container-fluid
-		%div.row
-			%div.col-sm-3.col-md-2.sidebar
-				%ul.nav.nav-sidebar
-					%li
-						%p.category_header Categories
-					%li= link_to "All Articles", root_path
-					- Category.all.each do |category|
-						%li= link_to category.name, articles_path(category: category.name)
-			%div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
-				= yield
+			%div.row
+				%div.col-sm-3.col-md-2.sidebar
+					%ul.nav.nav-sidebar
+						%li
+							%p.category_header Categories
+						%li
+							= link_to "All Articles", root_path
+						- Category.all.each do |category|
+							%li= link_to category.name, articles_path(category: category.name)
+				%div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+					= yield
+	-else
+
+		= yield
