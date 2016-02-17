@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 group :development, :test do
-	gem 'sqlite3', 	'1.3.11'
+	gem 'sqlite3', '1.3.11'
 end
 group :production do
 	gem 'pg'
