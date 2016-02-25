@@ -19,13 +19,6 @@
 		%strong
 			Tags:
 		= @article.category.name
-
-.btn-toolbar
-	= link_to "Back", root_path, class: "btn btn-primary"
-
-	- if user_signed_in?
-		= link_to "Edit", edit_article_path, class: "btn btn-primary"
-		= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary"
 %br
 %h4.page-header Additional Documents
 %br
@@ -39,3 +32,10 @@
 	= image_tag @article.image.url(:medium)
 -else
 	%br
+	
+.btn-toolbar
+	= link_to "Back", root_path, class: "btn btn-primary"
+
+	- if user_signed_in?
+		= link_to "Edit", edit_article_path, class: "btn btn-primary"
+		= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary"
