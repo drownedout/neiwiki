@@ -22,6 +22,8 @@ gem 'searchkick', '~> 1.1'
 gem 'paper_trail', '~> 4.1'
 gem 'paperclip', '~> 4.3', '>= 4.3.5'
 gem 'kaminari', '~> 0.16.3'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 group :development, :test do
   gem 'byebug'
