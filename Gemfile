@@ -24,6 +24,7 @@ gem 'paperclip', '~> 4.3', '>= 4.3.5'
 gem 'kaminari', '~> 0.16.3'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'byebug'
