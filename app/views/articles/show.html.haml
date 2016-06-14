@@ -33,7 +33,13 @@
 	= image_tag @article.image.url(:medium)
 -else
 	%br
-	
+%h4.page-header Comments
+- if @article.comments.any?
+	= render @article.comments
+-else
+	%p There are no comments here
+%h4.page-header Add a comment
+= render 'comments/form'
 .btn-toolbar
 	= link_to "Back", root_path, class: "btn btn-primary"
 

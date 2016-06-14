@@ -5,7 +5,6 @@
 - if user_signed_in?
 	%span.btn.btn-primary.pull-right.home-button= link_to "New Article", new_article_path
 	%span.btn.btn-success.pull-right.home-button= link_to "New Category", new_article_path
-
 %br
 
 - @articles.each do |article|

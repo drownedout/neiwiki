@@ -6,6 +6,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+html {
+  font-family: sans-serif;
+}
+
 .page-header {
 	padding-bottom: 9px;
     margin: 10px 0 20px;
