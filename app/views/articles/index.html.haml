@@ -4,6 +4,7 @@
 
 - if user_signed_in?
 	%span.btn.btn-primary.pull-right.home-button= link_to "New Article", new_article_path
+	%span.btn.btn-success.pull-right.home-button= link_to "New Category", new_article_path
 
 %br
 
@@ -12,14 +13,16 @@
 	%div.row
 		%div.col-md-3
 			%p 
-			Created on
+			%strong Created On:
 			= article.created_at.strftime('%b %d, %Y')
 		%div.col-md-3
 			%p
-			Updated on
+			%strong Updated On:
 			= article.updated_at.strftime('%b %d, %Y')
 	%p.content-body
-		= truncate(article.content, length: 200)
-		= link_to "Read more >>", article
+		= truncate(article.content, length: 500)
+		%br
+		%br
+		= link_to "Read More", article, class: "btn btn-info btn-sm"
 
 = paginate @articles

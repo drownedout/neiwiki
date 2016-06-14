@@ -1,0 +1,9 @@
+%h1.page-header Index of NEI Articles
+
+- if user_signed_in?
+	%span.btn.btn-primary.pull-right.home-button= link_to "New Category", new_category_path
+
+%br
+
+- @categories.each do |category|
+	%h3= link_to category.name, articles_path(category: category.name)

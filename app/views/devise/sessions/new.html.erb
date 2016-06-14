@@ -10,7 +10,7 @@
     <%= f.input :password, required: false %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
-
+ <p><em>By registering, you are consenting to the <%= link_to "terms and conditions", root_path %> of this website</em></p>
   <div class="form-actions">
     <%= f.button :submit, "Log in", class: "btn btn-primary" %>
   </div>
