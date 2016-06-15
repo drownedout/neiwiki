@@ -1,14 +1,23 @@
 %h1.page-header.article-title= @article.title
+
+%div.row
+	%div.col-md-12
+		%p
+			%strong
+				Created by: 
+			= @article.user.firstname
+			= @article.user.lastname
+
 %div.row
 	%div.col-md-3
 		%p
 			%strong 
-				Created on
+				Created on: 
 			= @article.created_at.strftime('%b %d, %Y')
 	%div.col-md-3
 		%p
 			%strong
-				Updated on
+				Updated on: 
 			= @article.updated_at.strftime('%b %d, %Y')
 %br
 

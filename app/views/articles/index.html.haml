@@ -1,6 +1,6 @@
-= render 'search'
-
-%h1.page-header Index of NEI Articles
+%div.row
+	%div.col-md-12
+		= render 'search'
 
 - if user_signed_in?
 	%span.btn.btn-primary.pull-right.home-button= link_to "New Article", new_article_path

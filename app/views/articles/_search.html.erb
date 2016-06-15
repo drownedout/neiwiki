@@ -1,6 +1,6 @@
-<%= form_tag search_articles_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
-	<p>
-	  <%= text_field_tag :search, params[:search], class: "form-control" %>
-	  <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
-	</p>
-<% end %>
+<div class="search_wrapper">
+	<%= form_tag search_articles_path, method: :get, class: "search_bar clearfix", role: "search" do %>
+		  <%= text_field_tag :search, params[:search], class: "form-control form_search", placeholder: "Search For Articles Here" %>
+		  <%= submit_tag "Search", name: nil, class: "btn btn-primary btn-search" %>
+	<% end %>
+</div>

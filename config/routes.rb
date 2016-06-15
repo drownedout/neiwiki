@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 		end
 		resources :comments
 	end
-	root 'articles#index'
+	get 'pages/home' => 'pages#home'
+	get 'pages/profile'
+	root 'pages#home'
 end
