@@ -6,8 +6,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-html {
-  font-family: sans-serif;
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .page-header {
@@ -17,9 +17,16 @@ html {
 }
 
 .category_header {
-	padding: 15px;
-	border-bottom: 1px solid black;
-  margin: 0 0 1rem 0;
+  margin: 0 0 2.5rem 0;
+  border-bottom: 1px solid black;
+  img {
+      width: 18px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  a {
+    font-size: 20px;
+  }
 }
 
 .navbar-brand {
@@ -109,14 +116,14 @@ h3 {
 }
 
 .btn-primary {
-    background-color: #0071bc;
+    background-color: #31758F;
     border: 1px solid #0071bc;
     a {
         color: #ffffff;
         text-decoration: none;
     }
     &:hover {
-        background-color: lighten(#0071bc,10%);
+        background-color: lighten(#31758F,10%);
     }
 }
 
@@ -125,4 +132,18 @@ h3 {
   border-color: 1px solid #0C4D66;
   color: #ffffff;
   margin: 1rem 0 3rem 0;
+}
+
+.sidebar_icon {
+  width: 15px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.sidebar_item {
+  margin-bottom: 15px;
+  a {
+    margin-top: 15px !important;
+    font-size: 16px;
+  }
 }

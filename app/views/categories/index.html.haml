@@ -1,9 +1,18 @@
-%h1.page-header Index of NEI Articles
-
-- if user_signed_in?
-	%span.btn.btn-primary.pull-right.home-button= link_to "New Category", new_category_path
+%div.home_title_row
+	%div.col-md-12.home_row
+		%h4.home_title Categories
 
 %br
 
-- @categories.each do |category|
-	%h3= link_to category.name, articles_path(category: category.name)
+%div.row
+	- @categories.each do |category|
+		%div.col-md-4
+			%div.row
+				%div.col-md-1
+					=image_tag"category.png", class: "article_home_image"
+				%div.col-md-11
+					%h3= link_to category.name, articles_path(category: category.name)
+					%p.article_home_description= truncate(category.description, length: 150)
+					%p
+						=category.articles.count
+						Articles

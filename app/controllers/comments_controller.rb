@@ -5,7 +5,10 @@ class CommentsController < ApplicationController
 		@comment = @article.comments.create(params[:comment].permit(:name, :body))
 		@comment.user_id = current_user.id
 		if @comment.save
-			redirect_to article_path(@article)
+			respond_to do |format|
+        		format.html { redirect_to article_path(@article) }
+        		format.js 
+    		end
 		else
 			flash.now = "error"
 		end

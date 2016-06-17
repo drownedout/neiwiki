@@ -4,6 +4,7 @@
 	%title NEI Wiki
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	%link{ href: 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,600,700', rel: 'stylesheet', type: 'text/css'}
 	= csrf_meta_tags
 %body
 	%p.notice.text-center.alert-warning= notice
@@ -26,16 +27,30 @@
 			%div.row
 				%div.col-sm-3.col-md-2.sidebar
 					%ul.nav.nav-sidebar
-						%li
-							%h4.category_header= link_to "Home", root_path
-						%li
-							= link_to "My Profile", pages_profile_path
-						- Category.all.each do |category|
-							%li= link_to category.name, articles_path(category: category.name)
-						%li
-							= link_to "Revision History", versions_path
-						%li
-							= link_to "List of all Categories", categories_path
+						%li.category_header
+							%span
+								=image_tag"home.png"
+								= link_to "Home", root_path
+						%li.sidebar_item
+							%span
+								=image_tag"profile.png", class: "sidebar_icon"
+								= link_to "My Profile", pages_profile_path
+						%li.sidebar_item
+							%span
+								=image_tag"documentw.png", class: "sidebar_icon"
+								= link_to "Articles", articles_path
+						%li.sidebar_item
+							%span
+								=image_tag"categoryw.png", class: "sidebar_icon"
+								= link_to "Categories", categories_path
+						%li.sidebar_item
+							%span
+								=image_tag"revision.png", class: "sidebar_icon"
+								= link_to "Wiki Revision History", versions_path
+						%li.sidebar_item
+							%span
+								=image_tag"email.png", class: "sidebar_icon"
+								= link_to "Contact Admin", versions_path
 				%div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
 					= yield
 	-else

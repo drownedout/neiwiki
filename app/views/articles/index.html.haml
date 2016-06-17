@@ -8,7 +8,12 @@
 %br
 
 - @articles.each do |article|
-	%h3= link_to article.title, article
+	%h3= link_to article.title, article, class: "article_index_title"
+	%p 
+		%strong
+			Created by: 
+		= article.user.firstname
+		= article.user.lastname
 	%div.row
 		%div.col-md-3
 			%p 
@@ -22,6 +27,6 @@
 		= truncate(article.content, length: 500)
 		%br
 		%br
-		= link_to "Read More", article, class: "btn btn-info btn-sm"
+		= link_to "Read More", article
 
 = paginate @articles
