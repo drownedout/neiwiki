@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 	end
 	get 'pages/home' => 'pages#home'
 	get 'pages/profile'
+	get 'pages/contact'
 	root 'pages#home'
 end
