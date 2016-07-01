@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 	resources :categories
 	resources :users, only: [:index, :show]
 
+	resources :forums do
+		resources :answers
+	end
+
 	resources :articles do
 		collection do
 			get 'search'
