@@ -1,0 +1,14 @@
+<div class="row home_title_row">
+	<div class="col-md-4 home_row">
+		<h4 class="home_title">Users</h4>
+	</div>
+</div>
+
+<% @users.each do |user| %>
+	<div class="col-md-3">
+		<p> <%= link_to user do %><%= user.firstname %> <%=user.lastname %> <% end %></p>
+		<p> Articles (<%= user.articles.count %>)</p>
+		<p> Comments (<%= user.comments.count %>)</p>
+
+	</div>
+<% end %>

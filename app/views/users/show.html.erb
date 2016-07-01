@@ -1,14 +1,13 @@
-<h1><%= current_user.firstname %> <%=current_user.lastname %></h1>
-<%= link_to "Edit Profile", edit_user_registration_path %>
+<h1><%= @user.firstname %> <%= @user.lastname %></h1>
 
 <div class="row home_title_row">
 	<div class="col-md-4 home_row">
-		<h4 class="home_title">My Articles</h4>
+		<h4 class="home_title"><%= @user.firstname %>'s Articles</h4>
 	</div>
 </div>
 
 <div class="row">
-	<% current_user.articles.each do |article| %>
+	<% @user.articles.each do |article| %>
 		<div class="col-md-6 profile_block">
 			<h4><%= link_to article.title, article, class: "article_home_title" %></h4>
 			<div class="row">
@@ -24,11 +23,11 @@
 
 <div class="row home_title_row">
 	<div class="col-md-4 home_row">
-		<h4 class="home_title">My Comments (<%= current_user.comments.count %>)</h4>
+		<h4 class="home_title"><%= @user.firstname %>'s Comments (<%= @user.comments.count %>)</h4>
 	</div>
 </div>
 
-<% current_user.comments.each do |comment| %>
+<% @user.comments.each do |comment| %>
 	<div class="comment">
 		<h4><%= comment.article.title %></h4>
 		<p class="comment_time"><%=comment.created_at.strftime('%b %d, %Y') %></p>
