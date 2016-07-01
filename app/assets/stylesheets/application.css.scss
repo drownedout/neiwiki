@@ -42,6 +42,9 @@ body {
 .navbar-right {
     a {
         color: #ffffff !important;
+        &:hover {
+          color: #FFBA6F !important;
+        }
     }
 }
 
@@ -110,6 +113,10 @@ h3 {
 }
 
 .btn-success {
+  background-color: #53BB7A !important;
+  &:hover {
+        background-color: lighten(#53BB7A,10%) !important;
+    }
   a {
     color: #ffffff;
   }

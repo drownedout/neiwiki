@@ -48,13 +48,16 @@
 								=image_tag"users.png", class: "sidebar_icon"
 								= link_to "Users", users_path
 						%li.sidebar_item
+								=image_tag"forumw.png", class: "sidebar_icon"
+								= link_to "Forums", categories_path
+						%li.sidebar_item
 							%span
 								=image_tag"revision.png", class: "sidebar_icon"
 								= link_to "Wiki Revision History", versions_path
 						%li.sidebar_item
 							%span
 								=image_tag"email.png", class: "sidebar_icon"
-								= link_to "Contact Admin", versions_path
+								= link_to "Contact Admin",pages_contact_path
 				%div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
 					= yield
 	-else
