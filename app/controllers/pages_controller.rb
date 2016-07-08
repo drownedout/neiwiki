@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-	before_action :authenticate_user!
+	before_action :authenticate_user!, except: [:terms]
 
 	def home
 		@categories = Category.order("created_at DESC").all.limit(6)
