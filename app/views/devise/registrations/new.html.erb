@@ -15,6 +15,10 @@
 	    <%= f.input :password_confirmation, required: true %>
 	  </div>
 	  <p><em>By registering, you are consenting to the <%= link_to "terms and conditions", pages_terms_path %> of this website</em></p>
+	  <%= f.label :terms, "I accept the NEI Wiki Terms and Conditions"%>
+	  <%= f.check_box :terms, required: true %>
+	  <br/>
+	  <br/>
 	  <div class="form-actions">
 	    <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
 	  </div>
