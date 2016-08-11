@@ -1,3 +1,14 @@
 // Place all the styles related to the forums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.forum_button {
+	margin: 0 3rem 2rem 0 !important;
+}
+
+.forum_index_block {
+	margin: 2.5rem 0 1rem 0;
+	h3 {
+		margin: 0;
+	}
+}

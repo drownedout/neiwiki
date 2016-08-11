@@ -1,23 +1,40 @@
-<%= link_to "Create A New Forum", new_forum_path, class: "btn btn-primary" %>
+<div class="search_wrapper">
+	<%= form_tag search_forums_path, method: :get, class: "search_bar clearfix", role: "search" do %>
+		  <%= text_field_tag :search, params[:search], class: "form-control form_search", placeholder: "Search The Forums Here" %>
+		  <%= submit_tag "Search", name: nil, class: "btn btn-primary btn-search" %>
+	<% end %>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<%= link_to "Create A New Forum", new_forum_path, class: "btn btn-primary pull-right forum_button" %>
+	</div>
+</div>
 
 <% @forums.each do |forum| %>
-	<div class="row">
+	<div class="row forum_index_block">
 		<div class="col-md-12">
-			<h3><%= link_to forum.title, forum, class: "article_index_title" %></h3>
+			<div class="col-md-4">
+				<h3><%= link_to forum.title, forum, class: "forum_index_title" %></h3>
+				<p><%= truncate(forum.content, length: 100) %></p>
+			</div>
+			<div class="col-md-4">
 				<p>
 					<strong>Created by:</strong>
 					<%= forum.user.firstname %>
 					<%= forum.user.lastname %>
 				</p>
-			<div class="row">
-				<div class="col-md-3">
-					<p><strong>Created On:</strong> <%= forum.created_at.strftime('%b %d %Y') %></p>
-				</div>
-				<div class="col-md-3">
-					<p><strong>Updated At:</strong> <%= forum.updated_at.strftime('%b %d %Y') %></p>
+			</div>
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-6">
+						<p><strong>Created On:</strong> <%= forum.created_at.strftime('%b %d %Y') %></p>
+					</div>
+					<div class="col-md-6">
+						<p><strong>Updated At:</strong> <%= forum.updated_at.strftime('%b %d %Y') %></p>
+					</div>
 				</div>
 			</div>
-			<p><%= forum.content %></p>
 		</div>
 	</div>
 <% end %>

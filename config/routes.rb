@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 	resources :users, only: [:index, :show]
 
 	resources :forums do
+		collection do
+			get 'search'
+		end
 		resources :answers
 	end
 

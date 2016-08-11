@@ -40,6 +40,14 @@ class ForumsController < ApplicationController
 		redirect_to forums_path
 	end
 
+	def search
+	    if params[:search].present?
+	      @forums = Forum.search(params[:search])
+	    else
+	      @forums = Forum.all
+	    end
+  	end
+
 	private
 
 	def find_forum

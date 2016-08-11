@@ -12,21 +12,27 @@
 
 	<div class="row home_title_row">
 		<div class="col-md-4 home_row">
-			<h4 class="home_title"><%= @user.firstname %>'s Articles</h4>
+			<h4 class="home_title"><%= @user.firstname %>'s Articles (<%= @user.articles.count %>)</h4>
 		</div>
 	</div>
 
 	<div class="row">
-		<% @user.articles.each do |article| %>
-			<div class="col-md-6 profile_block">
-				<h4><%= link_to article.title, article, class: "article_home_title" %></h4>
-				<div class="row">
-					<div class="col-md-6">
-						<p><%= article.created_at.strftime('%b %d, %Y') %></p>
+		<% if @user.articles.any? %>
+			<% @user.articles.each do |article| %>
+				<div class="col-md-6 profile_block">
+					<h4><%= link_to article.title, article, class: "article_home_title" %></h4>
+					<div class="row">
+						<div class="col-md-6">
+							<p><%= article.created_at.strftime('%b %d, %Y') %></p>
+						</div>
 					</div>
+					<p class="article_home_description"><%= truncate(article.content, length: 300) %></p>
+					<%= link_to "See More", article %>
 				</div>
-				<p class="article_home_description"><%= truncate(article.content, length: 300) %></p>
-				<%= link_to "See More", article %>
+			<% end %>
+		<% else %>
+			<div class="col-md-6 profile_block">
+				<p><%= @user.firstname %> has not written any articles yet.</p>
 			</div>
 		<% end %>
 	</div>
@@ -36,12 +42,15 @@
 			<h4 class="home_title"><%= @user.firstname %>'s Comments (<%= @user.comments.count %>)</h4>
 		</div>
 	</div>
-
-	<% @user.comments.each do |comment| %>
-		<div class="comment">
-			<h4><%= comment.article.title %></h4>
-			<p class="comment_time"><%=comment.created_at.strftime('%b %d, %Y') %></p>
-			<p><%= comment.body %></p>
-		</div>
+	<% if @user.comments.any? %>
+		<% @user.comments.each do |comment| %>
+			<div class="comment">
+				<h4><%= comment.article.title %></h4>
+				<p class="comment_time"><%=comment.created_at.strftime('%b %d, %Y') %></p>
+				<p><%= comment.body %></p>
+			</div>
+		<% end %>
+	<% else %>
+		<p><%= @user.firstname %> has not written any comments yet.</p>
 	<% end %>
 </div>

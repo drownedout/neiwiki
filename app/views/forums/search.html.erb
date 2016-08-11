@@ -1,0 +1,18 @@
+<h1 class="page-header"> Search Results</h1>
+
+<% @forums.each do |forum| %>
+	<h4><%= link_to forum.title, forum %>
+	<div class="row">
+		<!--%div.col-md-3
+			%p 
+			Created on
+			= article.created_at.strftime('%b %d, %Y')
+		%div.col-md-3
+			%p
+			Updated on
+			= article.updated_at.strftime('%b %d, %Y')
+	%p.content-body
+		= truncate(article.content, length: 200)
+		= link_to "Read more >>", article -->
+	</div>
+<% end %>
