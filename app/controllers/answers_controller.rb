@@ -1,11 +1,11 @@
 class AnswersController < ApplicationController
 	def create
 		@forum = Forum.find(params[:forum_id])
-		@answer = @forum.comments.create(params[:answer].permit(:name, :body))
+		@answer = @forum.answers.create(params[:answer].permit(:name, :body))
 		@answer.user_id = current_user.id
 		if @answer.save
 			respond_to do |format|
-        		format.html { redirect_to article_path(@article) }
+        		format.html { redirect_to forum_path(@forum) }
         		format.js 
     		end
 		else

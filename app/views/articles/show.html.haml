@@ -47,7 +47,6 @@
 	=@article.comments.count
 	)
 - if @article.comments.any?
-
 	= render @article.comments
 -else
 	%p There are no comments here

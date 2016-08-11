@@ -1,0 +1,20 @@
+<h1><%= @forum.title %></h1>
+<p><%= @forum.content %></p>
+
+<% if @forum.answers.any? %>
+	<%= render @forum.answers %>
+<% else %>
+	<p>There are no responses here. Be the first to say something?</p>
+<% end %>
+
+<h4 class="page-header">Add a response</h4>
+<%= render 'answers/form' %>
+
+<div class="btn-toolbar">
+	<%= link_to "Back", root_path, class: "btn btn-primary" %>
+</div>
+
+<% if current_user.id === @forum.user_id %>
+	<%= link_to "Edit", edit_forum_path, class: "btn btn-info" %>
+	<%= link_to "Delete", forum_path(@forum), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"  %>
+<% end %>

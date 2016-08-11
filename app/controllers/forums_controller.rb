@@ -37,7 +37,7 @@ class ForumsController < ApplicationController
 
 	def destroy
 		@forum.destroy
-		redirect_to forum_path
+		redirect_to forums_path
 	end
 
 	private
