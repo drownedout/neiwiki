@@ -1,5 +1,8 @@
 %h1.page-header.article-title= @article.title
 
+-if current_user.id == @article.user.id || current_user.type == "AdminUser"
+	%p= link_to "Edit Article", edit_article_path(@article)
+
 %div.row
 	%div.col-md-12
 		%p

@@ -1,14 +1,10 @@
 class CategoryPolicy < ApplicationPolicy
-	def new
+	def create?
 		admin?
 	end
 
-	def create
+	def update?
 		admin?
-	end
-
-	def edit
-		return true if admin?
 	end
 
 	private
