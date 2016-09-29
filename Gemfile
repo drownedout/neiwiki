@@ -25,6 +25,7 @@ gem 'kaminari', '~> 0.16.3'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'aws-sdk', '< 2.0'
+gem 'pundit', '~> 1.1'
 
 group :development, :test do
   gem 'byebug'
