@@ -5,9 +5,14 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "gritter";
 
 body {
   font-family: 'Open Sans', sans-serif;
+}
+
+.main-body {
+  margin-top: 50px;
 }
 
 .page-header {

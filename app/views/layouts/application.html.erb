@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NEI Wiki</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+  	<%= render 'shared/alerts' %>
+  	<% if user_signed_in? %>
+  		<%= render 'shared/navbar' %>
+  		<div class="container-fluid main-body">
+  			<div class="row">
+  				<%= render 'shared/sidebar' %>
+  				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  					<%= yield %>
+  				</div>
+  			</div>
+  		</div>
+  	<% else %>
+  		<%= yield %>
+  	<% end %>
+  </body>

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">   
+    <div class="navbar-header">
+      <a class="navbar-brand"> NEI WIKIPEDIA </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+        <% if current_user.type == "AdminUser" %>
+        <li><%= link_to "Admin Dashboard", admin_dashboard_index_path %></li>
+        <% end %>
+        <li><%= link_to "Create A New Article", new_article_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</nav>
