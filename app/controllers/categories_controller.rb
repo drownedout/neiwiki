@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
 
 	def new
 		@category = Category.new
+		
 	end
 
 	def create
@@ -16,12 +17,14 @@ class CategoriesController < ApplicationController
 		else
 			render 'new'
 		end
+		
 	end
 
 	def show
 	end
 
 	def edit
+		
 	end
 
 	def update

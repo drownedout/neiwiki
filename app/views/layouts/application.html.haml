@@ -7,8 +7,6 @@
 	%link{ href: 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,600,700', rel: 'stylesheet', type: 'text/css'}
 	= csrf_meta_tags
 %body
-	%p.notice.text-center.alert-warning= notice
-	%p.alert.text-center.alert-danger= alert
 	-if user_signed_in?
 		%nav.navbar.navbar-inverse.navbar-fixed-top
 			%div.container-fluid
@@ -17,6 +15,8 @@
 				%div.collapse.navbar-collapse
 					-if user_signed_in?
 						%ul.nav.navbar-nav.navbar-right
+							-if current_user.type == "AdminUser"
+								%li= link_to "Admin Dashboard", admin_dashboard_index_path
 							%li= link_to "Create A New Article", new_article_path
 							%li= link_to "Logout", destroy_user_session_path, method: :delete
 					-else
@@ -24,6 +24,8 @@
 							%li= link_to "Login", new_user_session_path
 							%li= link_to "Sign Up", new_user_registration_path
 		%div.container-fluid
+			%p.notice.text-center.alert-warning= notice
+			%p.alert.text-center.alert-danger= alert
 			%div.row
 				%div.col-sm-3.col-md-2.sidebar
 					%ul.nav.nav-sidebar

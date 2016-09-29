@@ -10,4 +10,15 @@ class ApplicationController < ActionController::Base
   	devise_parameter_sanitizer.for(:account_update){ |u| u.permit(:firstname, :lastname, :email, :password, :password_confirmation, :current_password) }
   end
 
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+  def admin_types
+		['AdminUser']
+	end
+
+private
+	def user_not_authorized
+		flash[:alert] = "You are not authorized to view this page"
+		redirect_to(request.referrer || root_path)
+	end
 end
