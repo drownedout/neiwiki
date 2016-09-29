@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
 		@answer.user_id = current_user.id
 		if @answer.save
 			respond_to do |format|
-        		format.html { redirect_to forum_path(@forum) }
+        		format.html { redirect_to forum_path(@forum), notice: "Your response was successfully created" }
         		format.js 
     		end
 		else
@@ -18,6 +18,6 @@ class AnswersController < ApplicationController
 		@answer = @forum.answers.find(params[:id])
     	@answer.destroy
 
-    	redirect_to forum_path(@forum)
+    	redirect_to forum_path(@forum), notice: "Your response was successfully deleted"
 	end
 end

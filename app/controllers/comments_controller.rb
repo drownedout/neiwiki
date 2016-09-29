@@ -6,11 +6,11 @@ class CommentsController < ApplicationController
 		@comment.user_id = current_user.id
 		if @comment.save
 			respond_to do |format|
-        		format.html { redirect_to article_path(@article) }
+        		format.html { redirect_to article_path(@article), notice: "Comment was posted successfully" }
         		format.js 
     		end
 		else
-			flash.now = "error"
+			notice: "There was an error posting your comment"
 		end
 	end
 
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 		@comment = @article.comments.find(params[:id])
     	@comment.destroy
 
-    	redirect_to article_path(@article)
+    	redirect_to article_path(@article), notice: "Comment was successfully deleted"
 	end
 
 end

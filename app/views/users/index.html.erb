@@ -3,9 +3,9 @@
 		<h4 class="home_title">Users</h4>
 	</div>
 </div>
-
+<div class="row">
 <% @users.each do |user| %>
-	<div class="col-md-3">
+	<div class="col-md-3 user-index">
 		<div class="col-md-4">
 			<%=image_tag('default-avatar.png', class: "profile_thumbnail") %>
 		</div>
@@ -16,3 +16,4 @@
 		</div>
 	</div>
 <% end %>
+</div>

@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
 	def create
 		@category = Category.new(category_params)
 		if @category.save
-			redirect_to root_path
+			redirect_to root_path, notice: "Category was created successfully"
 		else
 			render 'new'
 		end
@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
 
 	def update
 		if @category.update(category_params)
-			redirect_to root_path
+			redirect_to root_path, notice: "Category was updated successfully"
 		else
 			render 'edit'
 		end

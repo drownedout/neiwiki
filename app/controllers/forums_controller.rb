@@ -14,7 +14,7 @@ class ForumsController < ApplicationController
 		@forum = current_user.forums.build(forum_params)
 
 		if @forum.save
-			redirect_to @forum
+			redirect_to @forum, notice: "Forum topic was created successfully"
 		else
 			render 'new'
 		end
@@ -28,7 +28,7 @@ class ForumsController < ApplicationController
 
 	def update
 		if @forum.update(forum_params)
-			redirect_to @forum
+			redirect_to @forum, notice: "Your forum topic was updated successfully"
 		else
 			render 'edit'
 		end
@@ -37,7 +37,7 @@ class ForumsController < ApplicationController
 
 	def destroy
 		@forum.destroy
-		redirect_to forums_path
+		redirect_to forums_path, notice: "Your forum was successfully removed"
 	end
 
 	def search
