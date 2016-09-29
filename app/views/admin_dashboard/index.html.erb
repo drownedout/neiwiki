@@ -1,0 +1,24 @@
+<ul>
+  <li onclick="adminTabs('admin-users');"><p>Users</p></li>
+  <li onclick="adminTabs('admin-articles');"><p>Articles</p></li>
+  <li onclick="adminTabs('admin-forums');"><p>Forums</p></li>
+</ul>
+
+<div id="admin-users" class="dashboard-div">
+	<h1>Users</h1>
+	<%= render 'users' %>
+</div>
+
+<div id="admin-articles" class="dashboard-div">
+	<h1>Articles</h1>
+	<%= render 'articles' %>
+</div>
+
+<div id="admin-forums" class="dashboard-div">
+	<h1>Forums</h1>
+	<%= render 'forums' %>
+</div>
+
+<script>
+	adminTabs('admin-users');
+</script>

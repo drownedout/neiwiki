@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 	get 'pages/contact'
 	get 'pages/terms'
 	root 'pages#home'
+
+	get 'admin_dashboard', :to => 'admin_dashboard#index', :as => :admin_dashboard_indexr
 end
