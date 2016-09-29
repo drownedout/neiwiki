@@ -14,21 +14,25 @@
 
 <div id="admin-users" class="dashboard-div">
 	<h1>Users</h1>
+	<p><%= link_to 'Create New User', root_path %></p>
 	<%= render 'users' %>
 </div>
 
 <div id="admin-articles" class="dashboard-div">
 	<h1>Articles</h1>
+	<p><%= link_to 'Create New Article', new_article_path %></p>
 	<%= render 'articles' %>
 </div>
 
 <div id="admin-forums" class="dashboard-div">
 	<h1>Forums</h1>
+	<p><%= link_to 'Create New Forum', new_forum_path %></p>
 	<%= render 'forums' %>
 </div>
 
 <div id="admin-categories" class="dashboard-div">
-	<h1>Forums</h1>
+	<h1>Categories</h1>
+	<p><%= link_to 'Create New Category', new_category_path %></p>
 	<%= render 'categories' %>
 </div>
 

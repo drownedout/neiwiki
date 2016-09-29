@@ -1,13 +1,21 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>ID</th>
+			<th>#</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Date Joined</th>
+			<th>Delete</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @users.each do |user| %>
 			<tr>
 				<td><%= user.id %></td>
+				<td><%= user.full_name %></td>
+				<td><%= user.email %></td>
+				<td><%= user.created_at.strftime('%b %d, %Y') %></td>
+				<td><%= link_to "", user_path(user), method: :delete, class: 'glyphicon glyphicon-trash'%></td>
 			</tr>
 		<% end %>
 	</tbody>
