@@ -28,11 +28,11 @@
 		%strong
 			Tags:
 		= @article.category.name
-%br
-%h4.page-header Additional Documents
-%br
 
 -if @article.document_file_name.present?
+	%br
+	%h4.page-header Additional Documents
+	%br
 	%p Name:
 	%p= link_to @article.document_file_name, @article.document.url, target: "_blank"
 -else
