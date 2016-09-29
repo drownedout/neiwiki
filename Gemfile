@@ -29,6 +29,10 @@ gem 'aws-sdk', '< 2.0'
 group :development, :test do
   gem 'byebug'
   gem 'spring'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails', '~> 4.7'
 end
 
 group :development do
