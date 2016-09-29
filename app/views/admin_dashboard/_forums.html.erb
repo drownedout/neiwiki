@@ -1,13 +1,23 @@
-<table>
+<table class="table">
 	<thead>
 		<tr>
 			<th>ID</th>
+			<th>Title</th>
+			<th>Created By</th>
+			<th>Created At</th>
+			<th>Updated At</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @forums.each do |forum| %>
 			<tr>
 				<td><%= forum.id %></td>
+				<td><%= forum.title %></td>
+				<td><%= forum.user.full_name %></td>
+				<td><%= forum.created_at.strftime('%b %d, %Y') %></td>
+				<td><%= forum.updated_at.strftime('%b %d, %Y') %></td>
+				<td><%= link_to "", edit_forum_path(forum), class: 'glyphicon glyphicon-pencil' %></td>
+				<td><%= link_to "", forum_path(forum), method: :delete, class: 'glyphicon glyphicon-trash'%></td>
 			</tr>
 		<% end %>
 	</tbody>

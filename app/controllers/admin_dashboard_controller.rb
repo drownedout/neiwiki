@@ -3,5 +3,6 @@ class AdminDashboardController < ApplicationController
 		@users = User.all
 		@articles = Article.all
 		@forums = Forum.all
+		@categories = Category.all
 	end
 end

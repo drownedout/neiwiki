@@ -1,13 +1,23 @@
-<table>
+<table class="table">
 	<thead>
 		<tr>
-			<th>ID</th>
+			<th>#</th>
+			<th>Title</th>
+			<th>Created By</th>
+			<th>Created At</th>
+			<th>Updated At</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @articles.each do |article| %>
 			<tr>
 				<td><%= article.id %></td>
+				<td><%= article.title %></td>
+				<td><%= article.user.full_name %></td>
+				<td><%= article.created_at.strftime('%b %d, %Y') %></td>
+				<td><%= article.updated_at.strftime('%b %d, %Y') %></td>
+				<td><%= link_to "", edit_article_path(article), class: 'glyphicon glyphicon-pencil' %></td>
+				<td><%= link_to "", article_path(article), method: :delete, class: 'glyphicon glyphicon-trash index-icons'%></td>
 			</tr>
 		<% end %>
 	</tbody>

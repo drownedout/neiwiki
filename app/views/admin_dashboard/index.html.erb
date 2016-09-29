@@ -1,7 +1,15 @@
-<ul>
+<div class="row home_title_row">
+	<div class="col-md-4 home_row">
+		<h4 class="home_title">Admin Dashboard</h4>
+	</div>
+</div>
+
+<ul class="admin-navbar">
   <li onclick="adminTabs('admin-users');"><p>Users</p></li>
   <li onclick="adminTabs('admin-articles');"><p>Articles</p></li>
   <li onclick="adminTabs('admin-forums');"><p>Forums</p></li>
+  <li onclick="adminTabs('admin-categories');"><p>Categories</p></li>
+  <li><p>Flagged Posts</p></li>
 </ul>
 
 <div id="admin-users" class="dashboard-div">
@@ -18,6 +26,12 @@
 	<h1>Forums</h1>
 	<%= render 'forums' %>
 </div>
+
+<div id="admin-categories" class="dashboard-div">
+	<h1>Forums</h1>
+	<%= render 'categories' %>
+</div>
+
 
 <script>
 	adminTabs('admin-users');

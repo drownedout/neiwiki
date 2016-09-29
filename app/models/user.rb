@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates_acceptance_of :terms, acceptance: true, message: "You must accept the terms and conditons to use the NEI Wiki"
 
 	def full_name
-		return full_name + " " + last_name
+		return firstname + " " + lastname
 	end
   
 end

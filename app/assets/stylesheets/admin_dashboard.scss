@@ -5,3 +5,19 @@
 .dashboard-div {
 	display: none;
 }
+
+.admin-navbar {
+	text-align: center;
+	li{
+		display: inline-block;
+		margin-right: 1rem;
+		p{	
+			font-size: 1.75rem;
+			border-bottom: 1px solid black;
+			&:hover {
+				color: #FFBA6F;
+				cursor: pointer;
+			}
+		}
+	}
+}
