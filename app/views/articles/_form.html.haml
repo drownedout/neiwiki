@@ -1,9 +1,0 @@
-%div.row
-	%div.col-md-5
-		= simple_form_for @article do |f|
-			= f.input :title, class: "article_title_form"
-			= f.text_area :content, class: "article_content_form"
-			= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a Category"}
-			= f.input :image, as: :file
-			= f.input :document, as: :file
-			= f.submit "Submit", class: "btn btn-primary margin-bottom"

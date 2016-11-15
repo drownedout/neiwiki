@@ -27,6 +27,8 @@ gem 'elasticsearch-rails'
 gem 'aws-sdk', '< 2.0'
 gem 'pundit', '~> 1.1'
 gem 'gritter', '~> 1.2'
+gem "ckeditor"
+
 
 group :development, :test do
   gem 'byebug'

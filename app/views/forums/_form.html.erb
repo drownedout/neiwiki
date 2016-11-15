@@ -1,8 +1,8 @@
 <div class="row">
-	<div class="col-md-5">
+	<div class="col-md-10">
 		<%= simple_form_for @forum do |f| %>
-			<%= f.text_field :title, class: "article_title_form margin-bottom" %>
-			<%= f.text_area :content, class: "article_content_form margin-bottom" %>
+			<%= f.input :title, class: "article_title_form margin-bottom" %>
+			<%= f.cktext_area :content, class: "article_content_form margin-bottom" %>
 			<br/>
 			<%= f.submit class: "btn btn-primary margin-bottom" %>
 		<% end %>
