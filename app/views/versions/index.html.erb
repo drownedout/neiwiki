@@ -1,0 +1,21 @@
+<h1 class="page-header">Version History</h1>
+<table class="table table-striped">
+	<thead>
+		<th>Article Title</th>
+		<th>Event</th>
+		<th>Changes</th>
+		<th>User ID</th>
+	</thead>
+	<tbody>
+		<% @versions.each do |f| %>
+			<tr>
+				<td><%= f.item.title %></td>
+				<td><%= f.event %></td>
+				<td><%= f.object %></td>
+				<td><%= f.whodunnit %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= paginate @versions %>

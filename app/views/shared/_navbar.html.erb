@@ -9,7 +9,7 @@
         <% if current_user.type == "AdminUser" %>
         <li><%= link_to "Admin Dashboard", admin_dashboard_index_path %></li>
         <% end %>
-        <li><%= link_to "Create A New Article", new_article_path %></li>
+        <li><%= link_to "My Account Settings", edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         </ul>
       <% end %>

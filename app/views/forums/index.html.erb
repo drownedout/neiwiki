@@ -6,35 +6,31 @@
 </div>
 
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-8">
+		<h1>Forums</h1>
+	</div>
+	<div class="col-md-4">
 		<%= link_to "Create A New Forum", new_forum_path, class: "btn btn-primary pull-right forum_button" %>
 	</div>
 </div>
 
-<% @forums.each do |forum| %>
-	<div class="row forum_index_block">
-		<div class="col-md-12">
-			<div class="col-md-4">
-				<h3><%= link_to forum.title, forum, class: "forum_index_title" %></h3>
-				<p><%= truncate(forum.content, length: 100) %></p>
-			</div>
-			<div class="col-md-4">
-				<p>
-					<strong>Created by:</strong>
-					<%= forum.user.firstname %>
-					<%= forum.user.lastname %>
-				</p>
-			</div>
-			<div class="col-md-4">
-				<div class="row">
-					<div class="col-md-6">
-						<p><strong>Created On:</strong> <%= forum.created_at.strftime('%b %d %Y') %></p>
-					</div>
-					<div class="col-md-6">
-						<p><strong>Updated At:</strong> <%= forum.updated_at.strftime('%b %d %Y') %></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<% end %>
+<table class="table table-striped">
+	<thead>
+		<th>Title</th>
+		<th>Content</th>
+		<th>Created By</th>
+		<th>Created On</th>
+		<th>Updated At</th>
+	</thead>
+	<tbody>
+		<% @forums.each do |forum| %>
+			<tr>
+				<td><%= link_to forum.title, forum, class: "forum_index_title" %></td>
+				<td><%= truncate(forum.content, length: 100) %></td>
+				<td><%= link_to forum.user.firstname, forum.user %></td>
+				<td><%= forum.created_at.strftime('%b %d %Y') %></td>
+				<td><%= forum.updated_at.strftime('%b %d %Y') %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
