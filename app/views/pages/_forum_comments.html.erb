@@ -1,0 +1,16 @@
+<div class="row home_title_row">
+	<div class="col-md-4 home_row">
+		<h4 class="home_title"><%= current_user.firstname %>'s Forum Comments (<%= current_user.answers.count %>)</h4>
+	</div>
+</div>
+<% if current_user.answers.any? %>
+	<% current_user.answers.each do |answer| %>
+		<div class="comment">
+			<h4><%= answer.forum.title %></h4>
+			<p class="comment_time"><%= answer.created_at.strftime('%b %d, %Y') %></p>
+			<p><%= answer.body %></p>
+		</div>
+	<% end %>
+<% else %>
+	<p>You have not responded in any forum yet.</p>
+<% end %>

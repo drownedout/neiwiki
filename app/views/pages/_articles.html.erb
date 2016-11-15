@@ -1,0 +1,26 @@
+<div class="row home_title_row">
+	<div class="col-md-4 home_row">
+		<h4 class="home_title"><%= current_user.firstname %>'s Articles (<%= current_user.articles.count %>)</h4>
+	</div>
+</div>
+
+<div class="row">
+	<% if current_user.articles.any? %>
+		<% current_user.articles.each do |article| %>
+			<div class="col-md-11 profile_block">
+				<h4><%= link_to article.title, article, class: "article_home_title" %></h4>
+				<div class="row">
+					<div class="col-md-6">
+						<p><%= article.created_at.strftime('%b %d, %Y') %></p>
+					</div>
+				</div>
+				<p class="article_home_description"><%= truncate(article.content, length: 300) %></p>
+				<%= link_to "See More", article %>
+			</div>
+		<% end %>
+	<% else %>
+		<div class="col-md-6 profile_block">
+			<p>You have not written any articles yet.</p>
+		</div>
+	<% end %>
+</div>

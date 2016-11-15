@@ -1,0 +1,26 @@
+<div class="row home_title_row">
+	<div class="col-md-4 home_row">
+		<h4 class="home_title"><%= current_user.firstname %>'s Forums (<%= current_user.forums.count %>)</h4>
+	</div>
+</div>
+
+<div class="row">
+	<% if current_user.forums.any? %>
+		<% current_user.forums.each do |forum| %>
+			<div class="col-md-6 profile_block">
+				<h4><%= link_to forum.title, forum, class: "article_home_title" %></h4>
+				<div class="row">
+					<div class="col-md-6">
+						<p><%= forum.created_at.strftime('%b %d, %Y') %></p>
+					</div>
+				</div>
+				<p class="article_home_description"><%= truncate(forum.content, length: 300) %></p>
+				<%= link_to "See More", forum %>
+			</div>
+		<% end %>
+	<% else %>
+		<div class="col-md-6 profile_block">
+			<p>You have not created any forums yet.</p>
+		</div>
+	<% end %>
+</div>
