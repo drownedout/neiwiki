@@ -1,26 +1,30 @@
 <div class="row home_title_row">
 	<div class="col-md-4 home_row">
-		<h4 class="home_title"><%= @user.firstname %>'s Articles (<%= @user.articles.count %>)</h4>
+		<h4 class="home_title"><%= @user.full_name %>'s Articles (<%= @user.articles.count %>)</h4>
 	</div>
 </div>
 
-<div class="row">
-	<% if @user.articles.any? %>
-		<% @user.articles.each do |article| %>
-			<div class="col-md-11 profile_block">
-				<h4><%= link_to article.title, article, class: "article_home_title" %></h4>
-				<div class="row">
-					<div class="col-md-6">
-						<p><%= article.created_at.strftime('%b %d, %Y') %></p>
-					</div>
-				</div>
-				<p class="article_home_description"><%= truncate(article.content, length: 300) %></p>
-				<%= link_to "See More", article %>
-			</div>
-		<% end %>
-	<% else %>
-		<div class="col-md-6 profile_block">
-			<p><%= @user.firstname %> has not written any articles yet.</p>
-		</div>
-	<% end %>
-</div>
+<% if @user.articles.any? %>
+	<table class="table table-striped">
+		<thead>
+			<th>Title</th>
+			<th>Content</th>
+			<th>Created On</th>
+			<th>Updated At</th>
+		</thead>
+		<tbody>
+			<% @user.articles.each do |article| %>
+				<tr>
+					<td><%= link_to article.title, article, class: "forum_index_title" %></td>
+					<td><%= truncate(article.content, length: 80) %></td>
+					<td><%= article.created_at.strftime('%b %d %Y') %></td>
+					<td><%= article.updated_at.strftime('%b %d %Y') %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% else %>
+	<div class="col-md-6 profile_block">
+		<p><%= @user.firstname %> has not written any articles yet.</p>
+	</div>
+<% end %>

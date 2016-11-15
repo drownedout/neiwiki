@@ -22,24 +22,20 @@
 	</ul>
 
 	<div id="user-articles" class="dashboard-div">
-		<h1>My Articles</h1>
 		<p><%= link_to 'Create New Article', root_path %></p>
 		<%= render 'articles' %>
 	</div>
 
 	<div id="user-article-comments" class="dashboard-div">
-		<h1>My Article Comments</h1>
 		<%= render 'article_comments' %>
 	</div>
 
 	<div id="user-forums" class="dashboard-div">
-		<h1>My Forums</h1>
 		<p><%= link_to 'Create New Forum', new_forum_path %></p>
 		<%= render 'forums' %>
 	</div>
 
 	<div id="user-forum-comments" class="dashboard-div">
-		<h1>My Forum Answers</h1>
 		<%= render 'forum_comments' %>
 	</div>
 

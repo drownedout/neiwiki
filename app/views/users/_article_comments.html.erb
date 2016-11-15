@@ -1,16 +1,26 @@
 <div class="row home_title_row">
 	<div class="col-md-4 home_row">
-		<h4 class="home_title"><%= @user.firstname %>'s Article Comments (<%= @user.comments.count %>)</h4>
+		<h4 class="home_title"><%= @user.full_name %>'s Article Comments (<%= @user.comments.count %>)</h4>
 	</div>
 </div>
+
 <% if @user.comments.any? %>
-	<% @user.comments.each do |comment| %>
-		<div class="comment">
-			<h4><%= comment.article.title %></h4>
-			<p class="comment_time"><%=comment.created_at.strftime('%b %d, %Y') %></p>
-			<p><%= comment.body %></p>
-		</div>
-	<% end %>
+	<table class="table table-striped">
+		<thead>
+			<th>Forum Title</th>
+			<th>Comment</th>
+			<th>Created At</th>
+		</thead>
+		<tbody>
+			<% @user.comments.each do |comment| %>
+				<tr>
+					<td><%= link_to comment.article.title, article_path(comment), class: "forum_index_title" %></td>
+					<td><%= truncate(comment.body, length: 80) %></td>
+					<td><%= comment.created_at.strftime('%b %d %Y') %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 <% else %>
 	<p><%= @user.firstname %> has not written any comments yet.</p>
 <% end %>
