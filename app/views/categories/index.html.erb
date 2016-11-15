@@ -1,0 +1,24 @@
+<div class="home_title_row">
+	<div class="col-md-12 home_row">
+		<h4 class="home_title">Categories</h4>
+	</div>
+</div>
+
+<br/>
+
+<div class="row">
+	<% @categories.each do |category| %>
+		<div class="col-md-4">
+			<div class="row">
+				<div class="col-md-1">
+					<%=image_tag"category.png", class: "article_home_image" %>
+				</div>
+				<div class="col-md-10">
+					<h4 class="article_home_title"><%= link_to category.name, articles_path(category: category.name) %></h4>
+					<p class="article_home_description"><%= truncate(category.description, length: 100) %></p>
+					<p><%= category.articles.count %> Articles </p>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

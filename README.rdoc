@@ -1,7 +1,8 @@
 h1 Todo List
 
 Profile Pictures
-CKE Editor
+** CKE Editor
+Truncated views for article content (strip tags from truncated text)
 Mobile views
 Version History show page
 Refactor everthing to html
