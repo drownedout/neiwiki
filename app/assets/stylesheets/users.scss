@@ -1,3 +1,21 @@
 .user-index {
 	margin-bottom: 2.25rem;
 }
+
+.user-navbar {
+	text-align: left;
+	margin: 1rem 0;
+	padding: 0;
+	li{
+		display: inline-block;
+		margin-right: 1rem;
+		p{	
+			font-size: 1.75rem;
+			border-bottom: 1px solid black;
+			&:hover {
+				color: #FFBA6F;
+				cursor: pointer;
+			}
+		}
+	}
+}

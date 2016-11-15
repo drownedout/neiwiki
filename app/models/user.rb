@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :articles
   has_many :comments
   has_many :forums
+  has_many :answers
   validates_acceptance_of :terms, acceptance: true, message: "You must accept the terms and conditons to use the NEI Wiki"
 
 	def full_name

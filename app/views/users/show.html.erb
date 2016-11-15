@@ -10,47 +10,36 @@
 		</div>
 	</div>
 
-	<div class="row home_title_row">
-		<div class="col-md-4 home_row">
-			<h4 class="home_title"><%= @user.firstname %>'s Articles (<%= @user.articles.count %>)</h4>
-		</div>
+	<ul class="user-navbar">
+	  <li onclick="tabs('user-articles');"><p>Articles</p></li>
+	  <li onclick="tabs('user-article-comments');"><p>Article Comments</p></li>
+	  <li onclick="tabs('user-forums');"><p>Forums</p></li>
+	  <li onclick="tabs('user-forum-comments');"><p>Forums Comments</p></li>
+	</ul>
+
+	<div id="user-articles" class="dashboard-div">
+		<h1>Articles</h1>
+		<p><%= link_to 'Create New Article', root_path %></p>
+		<%= render 'articles' %>
 	</div>
 
-	<div class="row">
-		<% if @user.articles.any? %>
-			<% @user.articles.each do |article| %>
-				<div class="col-md-6 profile_block">
-					<h4><%= link_to article.title, article, class: "article_home_title" %></h4>
-					<div class="row">
-						<div class="col-md-6">
-							<p><%= article.created_at.strftime('%b %d, %Y') %></p>
-						</div>
-					</div>
-					<p class="article_home_description"><%= truncate(article.content, length: 300) %></p>
-					<%= link_to "See More", article %>
-				</div>
-			<% end %>
-		<% else %>
-			<div class="col-md-6 profile_block">
-				<p><%= @user.firstname %> has not written any articles yet.</p>
-			</div>
-		<% end %>
+	<div id="user-article-comments" class="dashboard-div">
+		<h1>Article Comments</h1>
+		<%= render 'article_comments' %>
 	</div>
 
-	<div class="row home_title_row">
-		<div class="col-md-4 home_row">
-			<h4 class="home_title"><%= @user.firstname %>'s Comments (<%= @user.comments.count %>)</h4>
-		</div>
+	<div id="user-forums" class="dashboard-div">
+		<h1>Forums</h1>
+		<p><%= link_to 'Create New Forum', new_forum_path %></p>
+		<%= render 'forums' %>
 	</div>
-	<% if @user.comments.any? %>
-		<% @user.comments.each do |comment| %>
-			<div class="comment">
-				<h4><%= comment.article.title %></h4>
-				<p class="comment_time"><%=comment.created_at.strftime('%b %d, %Y') %></p>
-				<p><%= comment.body %></p>
-			</div>
-		<% end %>
-	<% else %>
-		<p><%= @user.firstname %> has not written any comments yet.</p>
-	<% end %>
+
+	<div id="user-forum-comments" class="dashboard-div">
+		<h1>Categories</h1>
+		<%= render 'forum_comments' %>
+	</div>
+
 </div>
+<script>
+	tabs('user-articles');
+</script>

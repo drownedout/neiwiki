@@ -17,3 +17,14 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require_tree .
+
+function tabs(tabName) {
+	var i;
+	var x = document.getElementsByClassName('dashboard-div');
+
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = 'none';
+	}
+
+	document.getElementById(tabName).style.display = 'block';
+}
