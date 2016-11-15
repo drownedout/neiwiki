@@ -7,7 +7,7 @@
 <% @users.each do |user| %>
 	<div class="col-md-3 user-index">
 		<div class="col-md-4">
-			<%= image_tag(user.profile_picture.url(:medium), class: "profile_thumbnail") %>
+			<%= link_to image_tag(user.profile_picture.url(:medium), class: "profile_thumbnail user_profile_thumbnail"), user_path(user) %>
 		</div>
 		<div class="col-md-8">
 			<p> <%= link_to user_path(user) do %><%= user.firstname %> <%=user.lastname %> <% end %></p>

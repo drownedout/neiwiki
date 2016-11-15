@@ -19,3 +19,9 @@
 		}
 	}
 }
+
+.user_profile_thumbnail {
+	&:hover {
+		opacity: .8;
+	}
+}

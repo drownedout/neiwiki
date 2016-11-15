@@ -12,3 +12,5 @@ Update index views to tables??
 Paginate categories, forums
 
 Search for forums and categories
+
+Update for flagged posts/comments/etc
