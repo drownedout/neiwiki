@@ -13,6 +13,7 @@
 	    <%= f.input :email, required: true, autofocus: true %>
 	    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
 	    <%= f.input :password_confirmation, required: true %>
+	    <%= f.file_field :profile_picture %>
 	  </div>
 	  <p><em>By registering, you are consenting to the <%= link_to "terms and conditions", pages_terms_path %> of this website</em></p>
 	  <%= f.label :terms, "I accept the NEI Wiki Terms and Conditions"%>
