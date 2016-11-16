@@ -4,17 +4,19 @@ h1 Todo List
 ** CKE Editor
 ** Truncated views for article content (strip tags from truncated text)
 Mobile views
-Version History show page
+** Version History show page
 Refactor everthing to html
 
 Update index views to tables??
 
-Paginate categories, forums
+Paginate categories, forums(done)
 
 Search for forums and categories
 
 Update for flagged posts/comments/etc
 
-Change .hometitle class on user profiles
+** Change .hometitle class on user profiles
 
-Add profile pictures to comments, articles, etc.
+Redo buttons on article show
+
+Add profile pictures to articles, etc.

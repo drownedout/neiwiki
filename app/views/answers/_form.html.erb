@@ -1,5 +1,5 @@
 <%= simple_form_for([@forum, @forum.answers.build]) do |f| %>
-  <%= f.text_area :body %>
+  <%= f.text_area :body, id: "comment_body" %>
   <br/>
   <%= f.submit class: "btn btn-yellow" %>
 <% end %>

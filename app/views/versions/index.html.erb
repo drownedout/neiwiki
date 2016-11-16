@@ -9,7 +9,7 @@
 	<tbody>
 		<% @versions.each do |f| %>
 			<tr>
-				<td><%= f.item.title %></td>
+				<td><%= link_to f.item.title, version_path(f) %></td>
 				<td><%= f.event %></td>
 				<td><%= f.object %></td>
 				<td><%= f.whodunnit %></td>

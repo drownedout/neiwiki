@@ -1,0 +1,18 @@
+<h1 class="page-header">Version History</h1>
+<table class="table table-striped">
+	<thead>
+		<th>Article Title</th>
+		<th>Event</th>
+		<th>Changes</th>
+		<th>User ID</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @version.item.title %></td>
+			<td><%= @version.event %></td>
+			<td><%= @version.object %></td>
+			<td><%= @version.whodunnit %></td>
+		</tr>
+	</tbody>
+</table>
+<p><%= link_to "Back", versions_path %></p>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 	devise_for :users
-	resources :versions, only: [:index]
+	resources :versions, only: [:index, :show]
 	resources :categories
 	resources :users, only: [:index, :show]
 

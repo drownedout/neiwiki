@@ -3,7 +3,7 @@ class ForumsController < ApplicationController
 	before_action :find_forum, only: [:show, :edit, :update, :destroy]
 	
 	def index
-		@forums = Forum.all
+		@forums = Forum.page(params[:page]).per(20).order("updated_at DESC")
 	end
 
 	def new
