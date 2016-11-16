@@ -24,7 +24,7 @@
 			= @article.updated_at.strftime('%b %d, %Y')
 %br
 
-%p= @article.content
+%p= @article.content.html_safe
 
 -if @article.category.present?
 	%p

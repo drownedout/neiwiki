@@ -16,7 +16,7 @@
 			<% @user.articles.each do |article| %>
 				<tr>
 					<td><%= link_to article.title, article, class: "forum_index_title" %></td>
-					<td><%= truncate(article.content, length: 80) %></td>
+					<td><%= truncate(striphtml(article.content), length: 80) %></td>
 					<td><%= article.created_at.strftime('%b %d %Y') %></td>
 					<td><%= article.updated_at.strftime('%b %d %Y') %></td>
 				</tr>

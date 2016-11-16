@@ -1,5 +1,5 @@
 <h1><%= @forum.title %></h1>
-<p><%= @forum.content %></p>
+<p><%= @forum.content.html_safe %></p>
 
 <% if @forum.answers.any? %>
 	<%= render @forum.answers %>

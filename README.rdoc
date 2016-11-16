@@ -1,8 +1,8 @@
 h1 Todo List
 
-Profile Pictures
+** Profile Pictures
 ** CKE Editor
-Truncated views for article content (strip tags from truncated text)
+** Truncated views for article content (strip tags from truncated text)
 Mobile views
 Version History show page
 Refactor everthing to html
@@ -14,3 +14,7 @@ Paginate categories, forums
 Search for forums and categories
 
 Update for flagged posts/comments/etc
+
+Change .hometitle class on user profiles
+
+Add profile pictures to comments, articles, etc.

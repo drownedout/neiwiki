@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
         		format.js 
     		end
 		else
-			notice: "There was an error posting your comment"
+			redirect_to :back, notice: "There was an error posting your comment"
 		end
 	end
 

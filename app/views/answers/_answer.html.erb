@@ -1,19 +1,15 @@
 <div class="comment">
-	<h4>
-		<span><%= answer.user.firstname %></span>
-		<span><%= answer.user.lastname %></span>
-	</h4>
-
-	<span class="comment_time"><%= time_ago_in_words(answer.created_at) %> Ago</span>
-	
-	<br/>
-
+	<div class="row">
+		<div class="col-md-1">
+			<%= link_to image_tag(answer.user.profile_picture.url(:medium), class: "profile_thumbnail user_profile_thumbnail"), user_path(answer.user) %>
+		</div>
+		<div class="col-md-10">
+			<h4 class="comment_name"><%= answer.user.full_name %></h4>
+		</div>
+	</div> <!-- row -->
+	<p class="comment_time"><%= time_ago_in_words(answer.created_at) %> Ago </p>
 	<p><%= answer.body %></p>
-
-	<% if current_user.id === answer.user_id %>
-		<p>
-			<%= link_to 'Delete', [answer.forum, answer], method: :delete, data: { confirm: "Are sure you sure?" } %>
-		</p>
+	<% if current_user.id == answer.user_id %>
+		<p><%= link_to 'Delete', [answer.forum, answer], method: :delete, data: { confirm: "Are you sure?"} %></p>
 	<% end %>
-
 </div>

@@ -14,7 +14,7 @@
 				</div>
 				<div class="col-md-10">
 					<h4><%= link_to article.title, article, class: "article_home_title" %></h4>
-					<p class="article_home_description"><%= truncate(article.content, length: 100) %></p>
+					<p class="article_home_description"><%= truncate(striphtml(article.content), length: 100) %></p>
 				</div>
 			</div>
 		</div>
