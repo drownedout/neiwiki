@@ -3,11 +3,12 @@ Rails.application.routes.draw do
 	devise_for :users
 	resources :versions, only: [:index, :show]
 	resources :categories
+
 	scope "/admin_dashboard" do
-		resources :users, only: [:new, :create]
+		resources :users, except: [:index, :show]
 	end
 
-	resources :users, only: [:index, :show]
+	resources :users, only: [:index, :show], as: 'contributors'
 
 	resources :forums do
 		collection do
