@@ -22,3 +22,6 @@ Redo buttons on article show
 Add profile pictures to articles, etc.
 
 Update forms to looks nice
+
+
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:User> at /Users/Admin/Documents/rails/wiki/app/models/user.rb:13)
