@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 	devise_for :users
 	resources :versions, only: [:index, :show]
 	resources :categories
-	resources :users, only: [:index, :show]
+	scope "/admin_dashboard" do
+		resources :users, only: [:index, :show, :new, :create]
+	end
 
 	resources :forums do
 		collection do
