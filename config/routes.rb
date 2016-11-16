@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 	resources :versions, only: [:index, :show]
 	resources :categories
 	scope "/admin_dashboard" do
-		resources :users, only: [:index, :show, :new, :create]
+		resources :users, only: [:new, :create]
 	end
+
+	resources :users, only: [:index, :show]
 
 	resources :forums do
 		collection do

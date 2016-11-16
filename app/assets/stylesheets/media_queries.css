@@ -1,0 +1,28 @@
+@media all
+and (max-width : 770px) {
+	#sidebar{
+		position: fixed;
+		top:0;
+		left: -50%;
+		width: 45%;
+		height: 100%;
+		padding: 10px;
+		z-index: 9999;
+	}
+}
+
+@media all and (max-device-width: 500px) {
+	#sidebar{
+		position: fixed;
+		top:0;
+		left: -50%;
+		width: 45%;
+		height: 100%;
+		padding: 10px;
+		z-index: 9999;
+	}
+	#main {
+		width: 100%;
+		margin: 0;
+	}
+}
