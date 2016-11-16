@@ -1,0 +1,52 @@
+.form-body {
+	margin-top: 3rem;
+	width: 100%;
+	.form-title {
+		font-size: 2rem;
+		border-bottom: 1px solid #000000;
+		width: 65%;
+		text-align: center;
+		margin: 0;
+		padding: .5rem 0 1rem 0;
+	}
+	.field-body {
+		width: 65%;
+		margin: 1rem;
+		.field {
+			.form-label{
+				font-weight: 700;
+			}
+			.form-input:focus, .text-area:focus{
+				outline-color: #0be3e9;
+			}
+			.form-input{
+				width: 100%;
+				margin: 1rem 0;
+				padding: .25rem .25rem;
+			}
+			.input-field {
+				min-height: 100px;
+			}
+			select{
+				margin: .75rem 0;
+				width: 35%;
+			}
+			.text-area {
+				height: 14rem;
+				width: 100%;
+				margin: 1rem 0;
+			}
+			.file-field {
+				margin: 1rem 0;
+			}
+		}
+		.devise-links{
+			color: #000;
+			text-decoration: none;
+			&:hover {
+				color: #48b7cb;
+				cursor: pointer;
+			}
+		}
+	}	
+}

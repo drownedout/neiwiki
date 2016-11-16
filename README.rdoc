@@ -11,7 +11,7 @@ Update index views to tables??
 
 Paginate categories, forums(done)
 
-Search for forums and categories
+Search for forums(done?) and categories
 
 Update for flagged posts/comments/etc
 
@@ -20,3 +20,5 @@ Update for flagged posts/comments/etc
 Redo buttons on article show
 
 Add profile pictures to articles, etc.
+
+Update forms to looks nice
