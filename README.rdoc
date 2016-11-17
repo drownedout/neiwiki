@@ -5,7 +5,7 @@ h1 Todo List
 ** Truncated views for article content (strip tags from truncated text)
 Mobile views
 ** Version History show page
-Refactor everthing to html
+Refactor everthing to html (almost!)
 
 Update index views to tables??
 
@@ -19,9 +19,11 @@ Update for flagged posts/comments/etc
 
 Redo buttons on article show
 
-Add profile pictures to articles, etc.
+** Add profile pictures to articles, etc.
 
-Update forms to looks nice
+** Update forms to looks nice
+
+Paginate users
 
 
 DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:User> at /Users/Admin/Documents/rails/wiki/app/models/user.rb:13)
