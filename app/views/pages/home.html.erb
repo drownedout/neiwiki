@@ -27,19 +27,19 @@
 </div>
 <div class="row home_title_row">
 	<div class="col-md-12 home_row">
-		<h4 class="home_title">Most Recent Categories</h4>
+		<h4 class="home_title">Most Recent Forums</h4>
 	</div>
 </div>
 <div class="row">
-	<% @categories.each do |category| %>
+	<% @forums.each do |forum| %>
 		<div class="col-md-4 article_block">
 			<div class="row">
 				<div class="col-md-1">
-							<%= image_tag("category.png", class: "article_home_image") %>
+							<%= image_tag("forum.png", class: "article_home_image") %>
 				</div>
 				<div class="col-md-10">
-					<h4><%= link_to category.name, articles_path(category: category.name), class: "article_home_title" %></h4>
-					<p class="article_home_description"><%= truncate(category.description, length: 100) %></p>
+					<h4><%= link_to forum.title, forum_path(forum), class: "article_home_title" %></h4>
+					<p class="article_home_description"><%= truncate(striphtml(forum.content), length: 100) %></p>
 				</div>
 			</div>
 		</div>
