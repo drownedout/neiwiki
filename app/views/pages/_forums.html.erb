@@ -15,7 +15,7 @@
 			<% current_user.forums.each do |forum| %>
 				<tr>
 					<td><%= link_to forum.title, forum, class: "forum_index_title" %></td>
-					<td><%= truncate(forum.content, length: 80) %></td>
+					<td><%= truncate(striphtml(forum.content), length: 80) %></td>
 					<td><%= forum.created_at.strftime('%b %d %Y') %></td>
 					<td><%= forum.updated_at.strftime('%b %d %Y') %></td>
 				</tr>
