@@ -2,15 +2,18 @@
 
 <h1 class="page-header article-title"><%= @article.title %></h1>
 
+<div class="row">
+	<div class="profile-picture-block">
+		<%= link_to image_tag(@article.user.profile_picture.url(:medium), class: "profile_thumbnail user_profile_thumbnail"), contributor_path(@article.user) %>
+	</div>
+	<div class="profile-name-block">
+		<h4 class="comment_name">Created by: <%= @article.user.full_name %></h4>
+	</div>
+</div>
+
 <% if current_user.id == @article.user.id || current_user.type == "AdminUser" %>
 	<p><%= link_to "Edit Article", edit_article_path(@article) %> | <%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %> </p>
 <% end %>
-
-<div class="row">
-	<div class="col-md-12">
-		<p><strong>Created by:</strong> <%= @article.user.full_name %> </p>
-	</div>
-</div>
 
 <div class="row">
 	<div class="col-md-3">

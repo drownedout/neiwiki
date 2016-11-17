@@ -11,3 +11,18 @@
 		margin-bottom: 0;
 	}
 }
+
+.profile-picture-block {
+	float: left;
+	width: 2.5%;
+	margin-left: 16px;
+}
+
+.profile-name-block{
+	float: left;
+	width: 80%;
+	margin-left: 10px;
+	.comment_name {
+		font-size: 18px;
+	}
+}

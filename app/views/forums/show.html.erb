@@ -1,15 +1,17 @@
+<%= link_to "< Back", root_path, class: "article-link" %>
+
 <h1><%= @forum.title %></h1>
 <div class="row">
-	<div class="col-md-1">
+	<div class="profile-picture-block">
 		<%= link_to image_tag(@forum.user.profile_picture.url(:medium), class: "profile_thumbnail user_profile_thumbnail"), contributor_path(@forum.user) %>
 	</div>
-	<div class="col-md-10">
-		<h4 class="comment_name"><%= @forum.user.full_name %></h4>
+	<div class="profile-name-block">
+		<h4 class="comment_name">Created by: <%= @forum.user.full_name %></h4>
 	</div>
 </div>
 
 <% if current_user.id === @forum.user_id %>
-	<p><%= link_to "Edit Article", edit_forum_path(@forum) %> | <%= link_to "Delete Article", forum_path(@forum), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+	<p><%= link_to "Edit Forum", edit_forum_path(@forum) %> | <%= link_to "Delete Forum", forum_path(@forum), method: :delete, data: {confirm: "Are you sure?"} %> </p>
 <% end %> 
 
 <p><%= @forum.content.html_safe %></p>
@@ -24,8 +26,3 @@
 
 <h4 class="page-header">Add a response</h4>
 <%= render 'answers/form' %>
-
-<div class="btn-toolbar">
-	<%= link_to "Back", root_path, class: "btn btn-primary" %>
-</div>
-
