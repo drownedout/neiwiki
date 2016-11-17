@@ -24,8 +24,8 @@
 	</div>
 </div>
 
-<% if @article.category.present? %>
-	<p><strong>Category: </strong><%=@article.category.name %></p>
+<% if @article.categories.any? %>
+	<p><%= render @article.categories %><p>
 <% end %>
 
 <p><%= @article.content.html_safe %></p>

@@ -60,11 +60,12 @@ class ArticlesController < ApplicationController
 	private
 
 	def article_params
-		params.require(:article).permit(:title, :content, :category_id, :image, :document)
+		params.require(:article).permit(:title, :content, :image, :document, category_ids: [])
 	end
 
 	def find_article
 		@article = Article.find(params[:id])
 	end
+
 
 end

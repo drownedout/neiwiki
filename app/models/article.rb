@@ -6,7 +6,8 @@ class Article < ActiveRecord::Base
 	validates_attachment :document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
   	
 	belongs_to :user
-	belongs_to :category
+	has_many :article_categories
+	has_many :categories, through: :article_categories
 	has_many :comments
 	searchkick
 	has_paper_trail

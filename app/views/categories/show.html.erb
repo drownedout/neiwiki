@@ -1,0 +1,16 @@
+<div class="wrapper">
+	<h1 id="index-title">All <em><%= @category.name %></em> Articles</h1>
+	<% @category_articles.each do |article| %>
+		<h3><%= link_to article.title, article, class: "article_index_title" %></h3>
+		<p><strong>Created by:</strong> <%= article.user.full_name %></p>
+		<div class="row">
+			<div class="col-md-3">
+				<p><strong>Created On:</strong> <%= article.created_at.strftime('%b %d, %Y') %></p>
+			</div> <!-- col-md-3 -->
+			<div class="col-md-3">
+				<p><strong>Update At:</strong> <%= article.updated_at.strftime('%b %d, %Y') %></p>
+			</div> <!-- col-md-3 -->
+		</div> <!-- row -->
+		<p class="content-body"><%= truncate(striphtml(article.content), length: 500) %>  <%= link_to "Read More", article %></p>
+	<% end %>
+</div>
