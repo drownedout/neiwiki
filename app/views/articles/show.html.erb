@@ -1,44 +1,49 @@
 <%= link_to "< Back", root_path, class: "article-link" %>
 
-<h1 class="page-header article-title"><%= @article.title %></h1>
+<h1 class="article_title"><%= @article.title %></h1>
 
-<div class="row">
-	<div class="profile-picture-block">
-		<%= link_to image_tag(@article.user.profile_picture.url(:medium), class: "profile_thumbnail user_profile_thumbnail"), contributor_path(@article.user) %>
+<div class="article_block">
+	<div class="row">
+		<div class="profile-picture-block">
+			<%= link_to image_tag(@article.user.profile_picture.url(:medium), class: "profile_thumbnail user_profile_thumbnail"), contributor_path(@article.user) %>
+		</div>
+		<div class="profile-name-block">
+			<p class="comment_name">Created by: <%= @article.user.full_name %></p>
+		</div>
 	</div>
-	<div class="profile-name-block">
-		<h4 class="comment_name">Created by: <%= @article.user.full_name %></h4>
+
+	<% if current_user.id == @article.user.id || current_user.type == "AdminUser" %>
+		<p><%= image_tag('edit.png', class: "category_icon") %><%= link_to "Edit Article", edit_article_path(@article) %> | <%= image_tag('trash.png', class: "category_icon") %><%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+	<% end %>
+
+	<div class="row">
+		<div class="col-md-3">
+			<p><strong>Created on:</strong> <%= @article.created_at.strftime('%b %d, %Y') %> </p>
+		</div>
+		<div class="col-md-3">
+			<p><strong>Updated at:</strong> <%= @article.updated_at.strftime('%b %d, %Y') %> </p>
+		</div>
+	</div>
+
+	<p><%= @article.content.html_safe %></p>
+
+	<h4>Categories</h4>
+	<div class="category_block">
+		<% if @article.categories.any? %>
+			<p><%= render @article.categories %><p>
+		<% end %>
 	</div>
 </div>
-
-<% if current_user.id == @article.user.id || current_user.type == "AdminUser" %>
-	<p><%= link_to "Edit Article", edit_article_path(@article) %> | <%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %> </p>
-<% end %>
-
-<div class="row">
-	<div class="col-md-3">
-		<p><strong>Created on:</strong> <%= @article.created_at.strftime('%b %d, %Y') %> </p>
-	</div>
-	<div class="col-md-3">
-		<p><strong>Updated at:</strong> <%= @article.updated_at.strftime('%b %d, %Y') %> </p>
-	</div>
-</div>
-
-<% if @article.categories.any? %>
-	<p><%= render @article.categories %><p>
-<% end %>
-
-<p><%= @article.content.html_safe %></p>
 
 <% if @article.document_file_name.present? %>
-	<h4 class="page-header">Additional Documents</h4>
+	<h4>Additional Documents</h4>
 	<p><%=link_to @article.document_file_name, @article.document.url, target: "_blank" %></p>
 <% else %>
 	<p><em>There are no documents attached to this article</em></p>
 <% end %>
 
 <% if @article.image_file_name.present? %>
-	<h4 class="page-header">Attached Photo</h4>
+	<h4>Attached Photo</h4>
 	<p><%=link_to @article.image_file_name, @article.image.url, target: "_blank" %></p>
 <% else %>
 	<p><em>There is no image attached to this article</em></p>

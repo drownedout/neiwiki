@@ -1,1 +1,1 @@
-<span><%= link_to (category.name).downcase, category_path(category), class: "category_button", id: (category.name).downcase.to_s %> </span>
+<span><%=image_tag('category.png', class: 'category_icon') %><%= link_to (category.name), category_path(category), class: "category_button" %> </span>

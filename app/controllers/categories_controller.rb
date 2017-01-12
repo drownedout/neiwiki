@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
 	before_action :find_category, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@categories = Category.all
+		@categories = Category.all.order("name ASC").group_by{|u| u.name[0]}
 	end
 
 	def new
