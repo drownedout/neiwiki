@@ -8,7 +8,7 @@ class Article < ActiveRecord::Base
 	belongs_to :user
 	has_many :article_categories
 	has_many :categories, through: :article_categories
-	has_many :comments
+	has_many :comments, dependent: :destroy
 	searchkick
 	has_paper_trail
 
