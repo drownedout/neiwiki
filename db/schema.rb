@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117205702) do
+ActiveRecord::Schema.define(version: 20170202194324) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
     t.integer  "forum_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "flagged",    default: false
   end
 
   create_table "article_categories", force: :cascade do |t|
@@ -75,8 +76,9 @@ ActiveRecord::Schema.define(version: 20161117205702) do
     t.text     "body"
     t.integer  "article_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "flagged",    default: false
   end
 
   create_table "forums", force: :cascade do |t|

@@ -22,4 +22,20 @@ class CommentsController < ApplicationController
     	redirect_to article_path(@article), notice: "Comment was successfully deleted"
 	end
 
+	def flagged
+		@article = Article.find(params[:article_id])
+		@comment = @article.comments.find(params[:id])
+		@comment.update_attribute(:flagged, true)
+		@comment.save
+		redirect_to @article
+	end
+
+	def unflag
+		@article = Article.find(params[:article_id])
+		@comment = @article.comments.find(params[:id])
+		@comment.update_attribute(:flagged, false)
+		@comment.save
+		redirect_to @article
+	end
+
 end

@@ -1,0 +1,20 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Unflag</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @flagged_answers.each do |answer| %>
+			<tr>
+				<td><%= answer.id %></td>
+				<td><%= answer.body %></td>
+				<td><%= link_to "Unflag", unflag_forum_answer_path(answer.forum, answer) %></td>
+				<td><%= link_to "", forum_answer_path(answer.forum, answer), method: :delete, class: 'glyphicon glyphicon-trash'%></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

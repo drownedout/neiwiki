@@ -20,4 +20,20 @@ class AnswersController < ApplicationController
 
     	redirect_to forum_path(@forum), notice: "Your response was successfully deleted"
 	end
+
+	def flagged
+		@forum = Forum.find(params[:forum_id])
+		@answer = @forum.answers.find(params[:id])
+		@answer.update_attribute(:flagged, true)
+		@answer.save
+		redirect_to @forum
+	end
+
+	def unflag
+		@forum = Forum.find(params[:forum_id])
+		@answer = @forum.answers.find(params[:id])
+		@answer.update_attribute(:flagged, false)
+		@answer.save
+		redirect_to @forum
+	end
 end

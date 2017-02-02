@@ -1,0 +1,20 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Unflag</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @flagged_comments.each do |comment| %>
+			<tr>
+				<td><%= comment.id %></td>
+				<td><%= comment.body %></td>
+				<td><%= link_to "Unflag", unflag_article_comment_path(comment.article, comment) %></td>
+				<td><%= link_to "", article_comment_path(comment.article, comment), method: :delete, class: 'glyphicon glyphicon-trash'%></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

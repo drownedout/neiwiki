@@ -14,14 +14,24 @@ Rails.application.routes.draw do
 		collection do
 			get 'search'
 		end
-		resources :answers
+		resources :answers do
+			member do
+				get :flagged
+				get :unflag
+			end
+		end
 	end
 
 	resources :articles do
 		collection do
 			get 'search'
 		end
-		resources :comments
+		resources :comments do
+			member do
+				get :flagged
+				get :unflag
+			end
+		end
 	end
 	get 'pages/home' => 'pages#home'
 	get 'pages/profile'

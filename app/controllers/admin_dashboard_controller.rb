@@ -5,6 +5,8 @@ class AdminDashboardController < ApplicationController
 			@articles = Article.all
 			@forums = Forum.all
 			@categories = Category.all
+			@flagged_comments = Comment.where(flagged: true)
+			@flagged_answers = Answer.where(flagged: true)
 		else
 			redirect_to root_path
 		end

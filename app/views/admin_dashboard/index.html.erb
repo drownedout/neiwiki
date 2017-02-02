@@ -9,7 +9,8 @@
   <li onclick="tabs('admin-articles');"><p>Articles</p></li>
   <li onclick="tabs('admin-forums');"><p>Forums</p></li>
   <li onclick="tabs('admin-categories');"><p>Categories</p></li>
-  <li><p>Flagged Posts</p></li>
+  <li onclick="tabs('admin-flagged-comments');"><p>Flagged Article Comments</p></li>
+  <li onclick="tabs('admin-flagged-answers');"><p>Flagged Forum Comments</p></li>
 </ul>
 
 <div id="admin-users" class="dashboard-div">
@@ -36,6 +37,15 @@
 	<%= render 'categories' %>
 </div>
 
+<div id="admin-flagged-comments" class="dashboard-div">
+	<h1>Flagged Article Comments</h1>
+	<%= render 'flagged_comments' %>
+</div>
+
+<div id="admin-flagged-answers" class="dashboard-div">
+	<h1>Flagged Forum Comments</h1>
+	<%= render 'flagged_answers' %>
+</div>
 
 <script>
 	tabs('admin-users');
