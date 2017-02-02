@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :forums
-  has_many :answers
+  has_many :answers, dependent: :destroy
   validates_acceptance_of :terms, acceptance: true, message: "You must accept the terms and conditons to use the NEI Wiki"
 
 	has_attached_file :profile_picture, styles: { medium: "500x500#", small: "100x100#" }, :default_url => lambda { |avatar| avatar.instance.set_default_url}
