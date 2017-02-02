@@ -9,8 +9,8 @@
   <li onclick="tabs('admin-articles');"><p>Articles</p></li>
   <li onclick="tabs('admin-forums');"><p>Forums</p></li>
   <li onclick="tabs('admin-categories');"><p>Categories</p></li>
-  <li onclick="tabs('admin-flagged-comments');"><p>Flagged Article Comments</p></li>
-  <li onclick="tabs('admin-flagged-answers');"><p>Flagged Forum Comments</p></li>
+  <li onclick="tabs('admin-flagged-comments');"><p>Flagged Article Comments (<%= @flagged_comments.count %>)</p></li>
+  <li onclick="tabs('admin-flagged-answers');"><p>Flagged Forum Comments (<%= @flagged_answers.count %>)</p></li>
 </ul>
 
 <div id="admin-users" class="dashboard-div">
