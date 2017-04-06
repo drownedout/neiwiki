@@ -1,5 +1,10 @@
 .user-index {
 	margin-bottom: 2.25rem;
+	.user-index-information {
+		.user-index-fullname, .user-index-user-articles, .user-index-user-comments {
+			margin-bottom: .25rem;
+		}
+	}
 }
 
 .user-navbar {

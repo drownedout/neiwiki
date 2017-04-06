@@ -9,10 +9,10 @@
 		<div class="col-md-4">
 			<%= link_to image_tag(user.profile_picture.url(:medium), class: "profile_thumbnail user_profile_thumbnail"), contributor_path(user) %>
 		</div>
-		<div class="col-md-8">
-			<p> <%= link_to user.full_name, contributor_path(user) %></p>
-			<p> Articles (<%= user.articles.count %>)</p>
-			<p> Comments (<%= user.comments.count %>)</p>
+		<div class="col-md-8 user-index-information">
+			<p class="user-index-fullname"> <%= link_to user.full_name, contributor_path(user) %></p>
+			<p class="user-index-user-articles"> Articles (<%= user.articles.count %>)</p>
+			<p class="user-index-user-comments"> Comments (<%= user.comments.count %>)</p>
 		</div>
 	</div>
 <% end %>
