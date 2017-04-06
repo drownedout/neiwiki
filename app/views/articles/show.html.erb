@@ -1,6 +1,8 @@
 <%= link_to "< Back", root_path, class: "article-link" %>
 
-<h1 class="article_title"><%= @article.title %></h1>
+<div class="article-show-title-block">
+	<h1 class="article-title"><%= @article.title %></h1>
+</div>
 
 <div class="article_block">
 	<div class="row">
@@ -11,7 +13,7 @@
 			<p class="article-show-created-by">Created by: <%= @article.user.full_name %></p>
 		</div>
 	</div>
-	
+
 	<% if current_user.id == @article.user.id || current_user.type == "AdminUser" %>
 		<div class="article-show-article-delete-edit-bar">
 			<p><%= image_tag('edit.png', class: "category_icon") %><%= link_to "Edit Article", edit_article_path(@article) %> | <%= image_tag('trash.png', class: "category_icon") %><%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %> </p>

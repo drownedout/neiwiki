@@ -33,6 +33,17 @@
 
 /** Show **/
 
+.article-show-title-block {
+	border-bottom: 1px solid #000;
+	margin-top: 10px;
+	.article-title {
+		border-bottom: 5px solid #FFBA6F;
+	    width: 50%;
+	    margin: 0;
+	    padding-bottom: 2px;
+	}
+}
+
 .article_block {
 	border-bottom: 1px solid #eee;
 	border-top: 1px solid #eee;
@@ -50,10 +61,6 @@
 		.article-show-created-by {
 			font-size: 16px;
 		}
-	}
-	.article_title {
-		padding-bottom: 9px;
-	    margin: 10px 0 20px;
 	}
 	.article-show-article-delete-edit-bar {
 		margin: 1rem 0 1.5rem 0;
