@@ -31,13 +31,32 @@
 	height: 160px;
 }
 
+/** Show **/
+
 .article_block {
 	border-bottom: 1px solid #eee;
 	border-top: 1px solid #eee;
 	padding: 20px 0;
+	.profile-picture-block {
+		float: left;
+		width: 3%;
+		margin-left: 16px;
+	}
+
+	.profile-name-block{
+		float: left;
+		width: 80%;
+		margin: .55rem 0 0 10px;
+		.article-show-created-by {
+			font-size: 16px;
+		}
+	}
 	.article_title {
 		padding-bottom: 9px;
 	    margin: 10px 0 20px;
+	}
+	.article-show-article-delete-edit-bar {
+		margin: 1rem 0 1.5rem 0;
 	}
 }
 
@@ -90,10 +109,6 @@
 
 .article_home_description {
 	color: #aaa;
-}
-
-.article_block {
-	min-height: 115px !important;
 }
 
 .article_home_image {

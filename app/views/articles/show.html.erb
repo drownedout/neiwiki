@@ -8,12 +8,14 @@
 			<%= link_to image_tag(@article.user.profile_picture.url(:medium), class: "profile_thumbnail user_profile_thumbnail"), contributor_path(@article.user) %>
 		</div>
 		<div class="profile-name-block">
-			<p class="comment_name">Created by: <%= @article.user.full_name %></p>
+			<p class="article-show-created-by">Created by: <%= @article.user.full_name %></p>
 		</div>
 	</div>
-
+	
 	<% if current_user.id == @article.user.id || current_user.type == "AdminUser" %>
-		<p><%= image_tag('edit.png', class: "category_icon") %><%= link_to "Edit Article", edit_article_path(@article) %> | <%= image_tag('trash.png', class: "category_icon") %><%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+		<div class="article-show-article-delete-edit-bar">
+			<p><%= image_tag('edit.png', class: "category_icon") %><%= link_to "Edit Article", edit_article_path(@article) %> | <%= image_tag('trash.png', class: "category_icon") %><%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+		</div>
 	<% end %>
 
 	<div class="row">

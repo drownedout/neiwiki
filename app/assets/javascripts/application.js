@@ -27,3 +27,20 @@ function tabs(tabName) {
 
 	document.getElementById(tabName).style.display = 'block';
 }
+
+function sideMenu(){
+	$(document).ready(function() {
+        $("#squares").bind('click',function(){
+        	$(this).toggleClass("rotated");
+        	$(".sidebar").toggleClass("menu-open");
+        	$(".main").toggleClass("main-open");
+        	return false;
+        });
+    });
+	$("#exit-sidebar").bind('click',function(){
+	  $(this).toggleClass("rotated");
+	  $(".sidebar").toggleClass("menu-open");
+	  $(".main").toggleClass("main-open");
+	  return false;
+	});
+}
