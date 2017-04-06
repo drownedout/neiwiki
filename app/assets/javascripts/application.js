@@ -15,7 +15,6 @@
 //= require bootstrap-sprockets
 //= require gritter
 //= require turbolinks
-//= require ckeditor/init
 //= require_tree .
 
 function tabs(tabName) {
