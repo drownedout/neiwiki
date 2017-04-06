@@ -22,11 +22,19 @@
 	color: #033B50
 }
 
-.article_block {
+/** Home **/
+
+.article-home-block {
 	border-bottom: 1px solid #eee;
 	border-top: 1px solid #eee;
 	padding: 20px 0;
 	height: 160px;
+}
+
+.article_block {
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
+	padding: 20px 0;
 	.article_title {
 		padding-bottom: 9px;
 	    margin: 10px 0 20px;
