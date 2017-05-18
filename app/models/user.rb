@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 	has_attached_file :profile_picture, styles: { medium: "500x500#", small: "100x100#" }, :default_url => lambda { |avatar| avatar.instance.set_default_url}
   validates_attachment_content_type :profile_picture, :content_type => /\Aimage\/.*\Z/
 
+  paginates_per 20
+
   def full_name
 		return firstname + " " + lastname
 	end
