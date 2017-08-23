@@ -13,10 +13,11 @@
 			<h4 class="forum-show-created-by">Created by: <%= @forum.user.full_name %></h4>
 		</div>
 	</div>
-
-<% if current_user.id === @forum.user_id %>
-	<p><%= link_to "Edit Forum", edit_forum_path(@forum) %> | <%= link_to "Delete Forum", forum_path(@forum), method: :delete, data: {confirm: "Are you sure?"} %> </p>
-<% end %> 
+<% if user_signed_in? %>
+	<% if current_user.id === @forum.user_id %>
+		<p><%= link_to "Edit Forum", edit_forum_path(@forum) %> | <%= link_to "Delete Forum", forum_path(@forum), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+	<% end %> 
+<% end %>
 
 <p><%= @forum.content.html_safe %></p>
 
