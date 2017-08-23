@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_action :find_user, only: [:show, :destroy]
-	before_action :authenticate_user!
+	before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
 	def index
 		@users = User.all.page(params[:page]).per(20).order("updated_at DESC")

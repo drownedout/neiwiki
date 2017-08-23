@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-	before_action :authenticate_user!, except: [:terms]
+	before_action :authenticate_user!, only: [:profile]
 
 	def home
 		@forums = Forum.order("created_at DESC").all.limit(6)

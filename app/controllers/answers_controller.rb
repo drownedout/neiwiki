@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+	before_action :authenticate_user!, only: [:create, :destroy]
 	def create
 		@forum = Forum.find(params[:forum_id])
 		@answer = @forum.answers.create(params[:answer].permit(:name, :body))
