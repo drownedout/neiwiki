@@ -20,7 +20,7 @@
 			</div>
 		<% end %>
 	<% end %>
-	
+
 	<div class="row">
 		<div class="col-md-3">
 			<p><strong>Created on:</strong> <%= @article.created_at.strftime('%b %d, %Y') %> </p>
@@ -60,6 +60,7 @@
 <% else %>
 	<p>There are not comments here</p>
 <% end %>
-
-<h4 class="page-header">Add a comment</h4>
-<%= render 'comments/form' %>
+<% if user_signed_in? %>
+	<h4 class="page-header">Add a comment</h4>
+	<%= render 'comments/form' %>
+<% end %>

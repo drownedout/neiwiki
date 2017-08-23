@@ -29,5 +29,7 @@
 	<p>There are no responses here. Be the first to say something?</p>
 <% end %>
 
-<h4 class="page-header">Add a response</h4>
-<%= render 'answers/form' %>
+<% if user_signed_in? %>
+	<h4 class="page-header">Add a response</h4>
+	<%= render 'answers/form' %>
+<% end %>
