@@ -8,12 +8,15 @@
       <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
         <% if current_user.type == "AdminUser" %>
-        <li><%= link_to "Admin Dashboard", admin_dashboard_index_path %></li>
+          <li><%= link_to "Admin Dashboard", admin_dashboard_index_path %></li>
         <% end %>
         <li><%= link_to "My Account Settings", edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         </ul>
       <% end %>
+         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Login", new_user_session_path %></li>
+        </ul>
     </div>
   </div>
 </nav>
