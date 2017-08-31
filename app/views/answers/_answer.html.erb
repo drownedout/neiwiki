@@ -9,8 +9,10 @@
 	</div> <!-- row -->
 	<p class="comment_time"><%= time_ago_in_words(answer.created_at) %> Ago </p>
 	<p><%= answer.body %></p>
-	<% if current_user.id == answer.user_id %>
-		<p><%= link_to 'Delete', [answer.forum, answer], method: :delete, data: { confirm: "Are you sure?"} %></p>
+	<% if user_signed_in? %>
+		<% if current_user.id == answer.user_id %>
+			<p><%= link_to 'Delete', [answer.forum, answer], method: :delete, data: { confirm: "Are you sure?"} %></p>
+		<% end %>
+		<%= link_to "Report Comment", flagged_forum_answer_path(answer.forum, answer), data: {confirm: "Are you sure?"} %>
 	<% end %>
-	<%= link_to "Report Comment", flagged_forum_answer_path(answer.forum, answer), data: {confirm: "Are you sure?"} %>
 </div>
