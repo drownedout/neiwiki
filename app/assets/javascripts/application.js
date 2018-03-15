@@ -33,14 +33,15 @@ function sideMenu(){
         $("#squares").bind('click',function(){
         	$(this).toggleClass("rotated");
         	$(".sidebar").toggleClass("menu-open");
-        	$(".main").toggleClass("main-open");
+        	$("#main").toggleClass("main-open");
+        	$("#navbar").toggleClass("main-open");
         	return false;
         });
     });
 	$("#exit-sidebar").bind('click',function(){
 	  $(this).toggleClass("rotated");
 	  $(".sidebar").toggleClass("menu-open");
-	  $(".main").toggleClass("main-open");
+	  $("#main").toggleClass("main-open");
 	  return false;
 	});
 }

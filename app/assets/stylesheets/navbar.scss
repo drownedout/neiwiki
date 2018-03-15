@@ -11,4 +11,11 @@
 
 .mobile-squares {
 	display: none;
+	margin-top: 1rem;
+	max-height: 30px;
+	max-width: 30px;
+	img{
+		max-height: 100%;
+		max-width: 100%;
+	}
 }

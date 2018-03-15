@@ -8,6 +8,22 @@ and (max-width : 770px) {
 		height: 100%;
 		padding: 10px;
 		z-index: 9999;
+		&.menu-open {
+			left: 0;
+		}
+		li {
+			width: 90%;
+			a {
+				font-size: 24px;
+			}
+		}
+	}
+	#main {
+		width: 100%;
+		margin: 0;
+		&.main-open {
+			left: 50%;
+		}
 	}
 	#squares-link {
 		display: block;
@@ -24,12 +40,31 @@ and (max-width : 770px) {
 		left: -50%;
 		width: 45%;
 		height: 100%;
-		padding: 10px;
+		padding: 1rem;
 		z-index: 9999;
+		li {
+			margin-left: 1rem;
+			a {
+				font-size: 36px;
+				margin-left:.5rem;
+			}
+		}
+		&.menu-open {
+			left: 0;
+			overflow:hidden;
+		}
 	}
 	#main {
 		width: 100%;
 		margin: 0;
+		&.main-open {
+			left: 50%;
+		}
+	}
+	#navbar{
+		&.main-open {
+			left:45%;
+		}
 	}
 	#squares-link {
 		display: block;

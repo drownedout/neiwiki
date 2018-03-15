@@ -13,6 +13,7 @@ body {
 
 .main-body {
   margin-top: 50px;
+  transition: .3s ease-in-out;
 }
 
 .page-header {
@@ -32,6 +33,10 @@ body {
   a {
     font-size: 20px;
   }
+}
+
+.navbar {
+  transition: .3s ease-in-out;
 }
 
 .navbar-brand {
@@ -84,6 +89,7 @@ h3 {
     background-color: #333333;
     border-right: 1px solid #eee;
     font-weight: 500;
+    transition: .3s ease-in-out;
     .nav-sidebar{
         li {
             a {
@@ -99,7 +105,8 @@ h3 {
 
 .main {
 	padding-right: 40px;
-    padding-left: 40px;
+  padding-left: 40px;
+  transition: .3s ease-in-out;
 }
 
 .margin-left {
@@ -166,4 +173,9 @@ h3 {
 
 .profile_thumbnail {
   width:100%;
+}
+
+.see-more-link {
+  margin: 1rem 0;
+  display: block;
 }
